@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.outerDiv{
+  display: inline;
+  border-color:red;
+  width:100%;
+  height: 550px;
+}
+
+.searchDiv{
+  background-color: white
+}
+
+.leftDiv{
+
+  background-color: #004d66;
+  width:25%;
+  height:70%;
+  float: left;
+}
+
+.rightDiv{
+
+  background-color:#004d66;
+  width: 75%;
+  height: 550px;
+  float: left;
+  overflow: scroll;
+}
+
+.progressbar{
+    margin-left: 10%;
+    margin-right:10%;
+    width: 80%;
+    height:8px;
+    background-color:#99e6ff
+}
+
+.triangle1{
+  width:0px;
+  height:0px;
+  margin-left: 50%;
+  border-style:solid;
+  border-color:transparent transparent hotpink transparent;
+  border-width:0px 20px 20px 20px;
+}
+
+.img-responsive{
+  width: 200px;
+  margin-left:20%;
+  margin-top: 10%;
+  margin-bottom:10%;
+  margin-right: 20%;
+
+
+}
+
+.dropdown{
+  margin-left: 19%;
+  margin-right: 5%;
+}
+
+.wrapperCount{
+    display: flex;
+    
+}
+
+.BeginCount{
+    width:50%;
+    margin: 10px;
+}
+
+.EndCount{
+  width:50%;
+  margin: 10px;
+}
+
+.session{
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px
+}
+
+.sessionDetail{
+  margin: 10px;
+}
