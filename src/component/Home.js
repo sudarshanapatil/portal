@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import logo from "../images/test.JPG"
+import userPic from "../images/test.JPG"
 import axios from "axios"
 import ProgressBar from "./ProgressBar"
 import DropDownComp from "./DropDown"
-import NavComp from "./Navbar"
+import MyNavComp from "./myNav"
 import BeginCount from "./BeginCount"
 import EndCount from "./EndCount"
 import Session from "./Session"
 import SessionDetail from "./SessionDetail"
 import ModalComp from "./Modal"
-
 import "../index.css"
 import { Navbar, NavItem, MenuItem, NavDropdown, Image, Grid, Row, Col, DropdownButton } from 'react-bootstrap';
 import ScrollArea from "react-scrollbar"
@@ -63,22 +62,19 @@ class App extends Component {
 
         return (
             <div>
-                <NavComp />
+                <MyNavComp />
                 <div>
                     <div className="outerDiv">
                         <div className="leftDiv">
-                            <Image src={logo} responsive />
+                            <img className="userPic" src={userPic}  ></img>
                             <ProgressBar />
                         </div>
                         {data}
                     </div>
                 </div>
             </div>
-
         )
     }
-
-
 }
 
 export default App  
