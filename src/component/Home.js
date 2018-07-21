@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import userPic from "../images/test.JPG"
+import userPic from "../images/ranu.JPG"
 import axios from "axios"
 import ProgressBar from "./ProgressBar"
 import DropDownComp from "./DropDown"
@@ -34,6 +34,7 @@ class App extends Component {
                     sessions: res.data.sessions
                 })
             })
+            .catch(err => { console.log("error in getting API data: ", err) })
     }
 
     render() {
@@ -66,7 +67,12 @@ class App extends Component {
                 <div>
                     <div className="outerDiv">
                         <div className="leftDiv">
-                            <img className="userPic" src={userPic}  ></img>
+                            <div className="imgContainer">
+                                <img className="userPic" src={userPic}  ></img>
+                                <div className="imageCaption">
+                                    <p>Sudu Patil</p>
+                                </div>
+                            </div>
                             <ProgressBar />
                         </div>
                         {data}

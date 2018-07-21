@@ -8,7 +8,7 @@ const ProgressBar = () => {
         <div className="progressbar">
         </div>
         <div className="triangle3" style={{
-            width: "0px", height: "0px", "margin-left": `${progressCount}%`, "border-style": "solid", "border-color": "transparent transparent #99e6ff transparent",
+            width: "0px", height: "0px", "margin-left": `${progressCount}%`, "border-style": "solid", "border-color": "transparent transparent blue transparent",
             "border-width": "0px 20px 20px 20px"
         }}>
         </div>

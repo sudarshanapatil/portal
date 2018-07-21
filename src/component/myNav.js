@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../index.css"
-import jioLogo from "../images/jio.jpg"
+import jioLogo from "../images/jio1.png"
 import axios from "axios";
 class MyNavComp extends Component {
     constructor() {
@@ -19,33 +19,35 @@ class MyNavComp extends Component {
         axios.get(`http://api.myjson.com/bins/egw6e`)
             .then(res => {
                 this.setState({
-                    apiData: res.data,
-                    beginCount: res.data.begin_count,
-                    endCount: res.data.end_count,
-                    sessions: res.data.sessions
+                    searchData: ["a", "v", "d","sfsf"]
                 })
             })
-            .catch(err => {console.log("error in getting API data: " ,err)})
-        //    this.state.searchData=data.map((item) => {
-        //           return <div key={item} className="searchDiv">{item}</div>
-        //    })
+            .catch(err => { console.log("error in getting API data: ", err) })
+
 
     }
     render() {
+        let searchList;
+        if (this.state.searchData.length < 1) {
+            searchList = "loading"
+        }
+        else {
+
+            let data = this.state.searchData.map((item) => {
+                return <li className="searchDiv">{item}<hr/></li>
+            })
+            searchList = <ul className="searchUL">{data}</ul>
+            console.log("searchList : ", searchList)
+        }
 
         return (
             <div className="myNav">
                 <div className="navElements">
-                    <a href="#"><h5 className="navFont"> Home</h5></a>
                     <input type="text" placeholder="Search.." className="searchInput" onChange={(e) => this.handleSearch(e.target.value)}></input>
                     <div className="searchItems">
-                        <ul className="searchUL">
-                            <li className="searchDiv"> yeda</li>
-                            <li className="searchDiv">  pagal </li>
-                           
-                        </ul>
+                        {searchList}
                     </div>
-                    <img src={jioLogo} width="5%" height="40px" align="middle" />
+                    <img src={jioLogo} width="100px" height="100px" align="middle" />
                     <div className="filterDate" >
                         <button className="filterItem"> Today</button>
                         <button className="filterItem"> 1-week</button>

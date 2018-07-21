@@ -1,3 +1,12 @@
+:root {
+  --theme-primary-color:rgba(120, 222, 240, 0.925);
+  --progress-bar-color:blue;
+}
+
+hr{
+  margin: 1px
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +16,12 @@ body {
 ul {
   list-style-type: none;
 }
+
+li:hover{
+  background-color: aqua
+
+}
+
 .searchInput{
 
   width:20%;
@@ -57,13 +72,18 @@ flex-direction: column
 }
 
 .filterItem{
+  height: 50px;
+  width: 100px;
   margin: 10px;
-  border-radius: 50%;
+  border-radius: 25px;
   text-align: center;
-  background-color:rgb(131, 173, 236);
+  background-color:rgba(120, 222, 240, 0.925);
   border: none;
   text-decoration-color: white;
+}
 
+.filterItem:hover{
+  background-color : rgba(120, 222, 240, 0.925);
 }
 
 h5{
@@ -89,7 +109,7 @@ h5{
 
 .leftDiv{
 
-  background-color: #004d66;
+  background-color:var(--theme-primary-color);
   width:25%;
   height:550px;
   float: left;
@@ -97,10 +117,11 @@ h5{
 
 .rightDiv{
 
-  background-color:#004d66;
+  background-color:var(--theme-primary-color);
   width: 75%;
   height: 550px;
   float: left;
+  
  
 }
 
@@ -109,16 +130,7 @@ h5{
     margin-right:10%;
     width: 80%;
     height:8px;
-    background-color:#99e6ff
-}
-
-.triangle1{
-  width:0px;
-  height:0px;
-  margin-left: 50%;
-  border-style:solid;
-  border-color:transparent transparent hotpink transparent;
-  border-width:0px 20px 20px 20px;
+    background-color:var(--progress-bar-color);
 }
 
 .img-responsive{
@@ -137,6 +149,7 @@ h5{
 }
 
 .wrapperCount{
+  margin-top: 1%;
     display: flex;
     
 }
@@ -156,6 +169,7 @@ h5{
   background-color: white;
   border-radius: 5px;
   overflow: scroll;
+  padding: 2%
 }
 
 .sessionDetail{
@@ -164,8 +178,24 @@ h5{
 }
 
 .userPic{
-  margin: 20%;
-  margin-bottom:2%;
-  width:60%;
-  height:30%;
+  /*margin: 20%;*/
+  margin-bottom:6%;
+  width:100%;
+  height:25%;
+
+  /* border-radius: 10px; */
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.imgContainer{
+  background-color: white;
+  margin: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+  margin-top:20%
+}
+
+.imageCaption{
+  text-align: center;
+  padding: 10px 20px;
 }
