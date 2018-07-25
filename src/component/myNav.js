@@ -6,12 +6,9 @@ class MyNavComp extends Component {
     constructor() {
         super()
         this.state = {
-            searchData: []
+            searchData: [],
+            userData: ""
         }
-    }
-    componentDidMount() {
-        console.log("in CDM")
-
     }
     handleSearch(searchTerm) {
         console.log(searchTerm, "hahahahaha")
@@ -19,22 +16,23 @@ class MyNavComp extends Component {
         axios.get(`http://api.myjson.com/bins/egw6e`)
             .then(res => {
                 this.setState({
-                    searchData: ["a", "v", "d","sfsf"]
+                    searchData: ["a", "v", "d", "sfsf"]
                 })
             })
             .catch(err => { console.log("error in getting API data: ", err) })
-
-
     }
+    getUserData(userName) {
+        console.log("called user data : ", userName)
+    }
+
     render() {
         let searchList;
         if (this.state.searchData.length < 1) {
             searchList = "loading"
         }
         else {
-
             let data = this.state.searchData.map((item) => {
-                return <li className="searchDiv">{item}<hr/></li>
+                return <li className="searchDiv" onClick={() => this.getUserData(item)} >{item}<hr /></li>
             })
             searchList = <ul className="searchUL">{data}</ul>
             console.log("searchList : ", searchList)

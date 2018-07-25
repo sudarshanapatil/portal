@@ -43,41 +43,41 @@ class App extends Component {
             data = <ModalComp />
         }
         else {
-            data = <div className="rightDiv">
-                <div className="wrapperCount">
-                    <div className="BeginCount">
-                        <BeginCount count={this.state.beginCount} />
+            data = <div>
+            <div className="outerDiv">
+                <div className="leftDiv">
+                    <div className="imgContainer">
+                        <img className="userPic" src={userPic}  ></img>
+                        <div className="imageCaption">
+                            <p>Sudu Patil</p>
+                        </div>
                     </div>
-                    <div className="EndCount">
-                        <EndCount count={this.state.endCount} />
-                    </div>
-                </div >
-                <div className="session">
-                    <Session data={this.state.sessions} />
+                    <ProgressBar />
                 </div>
-                <div className="sessionDetail">
-                    <SessionDetail />
-                </div>
+                <div className="rightDiv">
+        <div className="wrapperCount">
+            <div className="BeginCount">
+                <BeginCount count={this.state.beginCount} />
             </div>
+            <div className="EndCount">
+                <EndCount count={this.state.endCount} />
+            </div>
+        </div >
+        <div className="session">
+            <Session data={this.state.sessions} />
+        </div>
+        <div className="sessionDetail">
+            <SessionDetail />
+        </div>
+    </div>
+            </div>
+        </div>
         }
 
         return (
             <div>
                 <MyNavComp />
-                <div>
-                    <div className="outerDiv">
-                        <div className="leftDiv">
-                            <div className="imgContainer">
-                                <img className="userPic" src={userPic}  ></img>
-                                <div className="imageCaption">
-                                    <p>Sudu Patil</p>
-                                </div>
-                            </div>
-                            <ProgressBar />
-                        </div>
-                        {data}
-                    </div>
-                </div>
+               {data}
             </div>
         )
     }
